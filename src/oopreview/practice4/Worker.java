@@ -1,27 +1,32 @@
 package oopreview.practice4;
 
 public abstract class Worker {
+
+   private EmployeeType employeeType;
+   private double salary;
+   
    public abstract void doWork();   
     // fill necessary fields
     
     public double getSalary() { 
-        // fill necessary codes
+        return salary;
    }
     
     public void setSalary(double salary) {
-        // fill necessary codes
+        employeeType.setPrevSalary(this.salary);
+        this.salary = salary;
     }
 
     public void increaseSalary(double rate) {
-        // fill necessary codes
+        salary = employeeType.increaseSalary(this.salary, rate);
     }
     
     public void setEmployeeType(EmployeeType emptype) {
-        // fill necessary codes
+        this.employeeType = emptype;
     }
     
     public EmployeeType getEmpoyeeType() {
-        // fill necessary codes
-    }    
+        return employeeType;
+    }
    
 }
